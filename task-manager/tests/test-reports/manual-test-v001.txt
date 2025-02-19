@@ -1,0 +1,3 @@
+Application has an UI but not user-friendly
+CRUD functionality implemented
+Toggle completion for tasks implemented
