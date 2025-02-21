@@ -1,3 +1,4 @@
 Application has an UI but not user-friendly
+No localstorage
 CRUD functionality implemented
 Toggle completion for tasks implemented
