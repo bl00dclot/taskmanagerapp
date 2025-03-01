@@ -1,10 +1,12 @@
 # Task Manager Application with Comprehensive Testing
 
+*Application created with ChatGPT-4, overall subjective rating 4/10
 ## Overview
 
 This repository hosts a streamlined **Task Manager Application** built with **React** and **Next.js**. The application focuses on robust software testing practices by integrating unit, integration, and end-to-end (E2E) tests using **Jest** and **Cypress**.
 
-## Objectives
+## Objectives    "@tailwindcss/postcss": {},
+
 
 - **User-Friendly Interface:** Develop a responsive, intuitive task management system.
 - **Comprehensive Testing:** Implement thorough unit, integration, and E2E tests to ensure code quality.
