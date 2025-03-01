@@ -4,7 +4,6 @@ import TaskManager from "./components/TaskManager";
 export default function Home() {
   return (
     <div>
-      <h1>Task Manager App</h1>
       <TaskManager />
     </div>
   );

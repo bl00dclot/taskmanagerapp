@@ -1,5 +1,6 @@
 // components/TaskManager.tsx
 import { useState } from "react";
+import { useEffect } from "react";
 import TaskList from "./TaskList";
 import TaskForm from "./TaskForm";
 
@@ -14,6 +15,28 @@ export interface Task {
 
 const TaskManager: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
+
+    // Load tasks from localStorage when the component mounts.
+    useEffect(() => {
+      // Ensure we're running in the browser
+      if (typeof window !== "undefined") {
+        const storedTasks = localStorage.getItem("tasks");
+        if (storedTasks) {
+          try {
+            setTasks(JSON.parse(storedTasks));
+          } catch (error) {
+            console.error("Error parsing tasks from localStorage:", error);
+          }
+        }
+      }
+    }, []);
+
+      // Save tasks to localStorage whenever tasks state changes.
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+  }, [tasks]);
 
   // Add a new task
   const addTask = (title: string, description: string = ""): void => {
@@ -54,7 +77,6 @@ const TaskManager: React.FC = () => {
 
   return (
     <div>
-      <h2>Task Manager</h2>
       <TaskForm addTask={addTask} />
       <TaskList
         tasks={tasks}

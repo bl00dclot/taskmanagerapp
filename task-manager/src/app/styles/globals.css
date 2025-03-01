@@ -1,21 +1,47 @@
+/* global.css */
+
+/* Import the Creepster font from Google Fonts */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap'); */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* Custom Global Styles for a Satanic Deeds Theme */
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Use Tailwind's utility classes to set a black background, red text, and a gothic font */
+  @apply bg-black text-red-500;
+  font-family: 'Creepster', cursive;
+}
+
+/* Ensure all headings have an old-school, uppercase, and spaced appearance */
+h1, h2, h3, h4, h5, h6 {
+  @apply uppercase tracking-widest;
+}
+
+/* Style links with red hues */
+a {
+  @apply text-red-400 hover:text-red-600;
+}
+
+/* Optionally, style other common elements for consistency */
+p {
+  @apply text-red-500;
+}
+
+/* Custom scrollbar (optional, for extra flair) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #e3342f;
+  border-radius: 10px;
+  border: 2px solid #111;
 }
